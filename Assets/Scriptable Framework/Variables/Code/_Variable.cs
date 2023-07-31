@@ -6,7 +6,7 @@ namespace Variable
 {
 
     //The Abstract modifier indicates that the thing being modified has a missing or incomplete implementation.
-    public abstract class _Variable : ScriptableObject
+    public abstract class BaseVariable : ScriptableObject
     {
         //our base class has 3 behaviours in it that we can ovveride later.
 
@@ -18,7 +18,7 @@ namespace Variable
 
     }
     // Generic Variable <T> means TYPE.
-    public class GenericVariable<T> : _Variable, ISerializationCallbackReceiver
+    public class GenericVariable<T> : BaseVariable, ISerializationCallbackReceiver
     {
         //Comma seperated list of identifiers is an enum.
         //A word with a number (enum index)
@@ -34,6 +34,7 @@ namespace Variable
             Persist
         }
 
+        [Tooltip("Show us stuff")]
         [SerializeField] private T _initialValue;
         [SerializeField] private T _runtimeValue;
         [SerializeField] private RuntimeMode _runtimeMode;
