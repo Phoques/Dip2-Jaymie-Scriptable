@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.UI; // Added
 using System.CodeDom.Compiler;
 
 namespace Reference
@@ -19,6 +20,7 @@ namespace Reference
     [CustomPropertyDrawer(typeof(Transform))]
     [CustomPropertyDrawer(typeof(Vector2))]
     [CustomPropertyDrawer(typeof(Vector3))]
+    [CustomPropertyDrawer(typeof(Image))] // added
 
     #endregion
 
